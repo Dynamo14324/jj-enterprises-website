@@ -3,10 +3,8 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "regions": ["bom1"],
-  "env": {
-    "NEXT_PUBLIC_GA_MEASUREMENT_ID": "@ga_measurement_id",
-    "NEXT_PUBLIC_GOOGLE_VERIFICATION": "@google_verification"
-  }
+  "framework": "nextjs",
+  "regions": [
+    "bom1"
+  ]
 }
-
