@@ -125,8 +125,8 @@ const nextConfig = {
     return config
   },
 
-  // Output configuration
-  output: 'standalone',
+  // Output configuration - removed 'standalone' for Vercel compatibility
+  // output: 'standalone', // Commented out for Vercel deployment
   
   // Redirects for SEO
   async redirects() {
