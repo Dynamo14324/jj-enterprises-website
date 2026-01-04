@@ -154,8 +154,8 @@ export function preloadCriticalResources() {
   if (typeof window !== 'undefined') {
     // Preload critical images
     const criticalImages = [
-      '/optimized/opt-corrugated-boxes-hero.jpg',
-      '/optimized/opt-manufacturing-facility.jpg',
+      '/corrugated-boxes-hero.jpg',
+      '/manufacturing-facility.jpg',
     ]
 
     criticalImages.forEach((src) => {

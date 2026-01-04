@@ -206,7 +206,7 @@ export function TrustSignals() {
                       <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-4 italic">"{testimonial.content}"</p>
+                  <p className="text-gray-600 mb-4 italic">&quot;{testimonial.content}&quot;</p>
                   <div className="flex items-center">
                     <Image
                       src={testimonial.image || "/placeholder.svg"}

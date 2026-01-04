@@ -182,7 +182,7 @@ export function Footer() {
                 </div>
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                India's leading manufacturer of premium paper box packaging solutions. With 15+ years of experience, we
+                India&apos;s leading manufacturer of premium paper box packaging solutions. With 15+ years of experience, we
                 deliver quality-assured, sustainable packaging that elevates your brand and protects your products.
               </p>
 

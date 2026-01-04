@@ -74,7 +74,7 @@ export class ThreeErrorBoundary extends Component<Props, State> {
               </div>
               <CardTitle className="text-2xl text-gray-900">3D Viewer Not Available</CardTitle>
               <CardDescription className="text-gray-600">
-                Your browser doesn't support WebGL, which is required for the 3D configurator.
+                Your browser doesn&apos;t support WebGL, which is required for the 3D configurator.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
