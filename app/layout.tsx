@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter, Poppins } from "next/font/google"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
@@ -11,6 +11,13 @@ import { ErrorBoundary } from "@/components/error-boundary"
 import Script from "next/script"
 import { organizationSchema, websiteSchema } from "@/lib/seo"
 import { SkipToMain } from "@/lib/accessibility"
+import { CurrencyProvider } from "@/lib/currency-context"
+
+declare global {
+  interface Window {
+    gtag: any
+  }
+}
 
 const inter = Inter({
   subsets: ["latin"],
@@ -108,13 +115,33 @@ export const metadata: Metadata = {
   },
   verification: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION
     ? {
-        google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
-      }
+      google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+    }
     : undefined,
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "JJ Enterprises",
+  },
   other: {
     "msapplication-TileColor": "#f97316",
-    "theme-color": "#f97316",
+    "mobile-web-app-capable": "yes",
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: "#f97316",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({
@@ -125,26 +152,6 @@ export default function RootLayout({
   return (
     <html lang="en-IN" suppressHydrationWarning className={`${inter.variable} ${poppins.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        <meta name="theme-color" content="#f97316" />
-        <meta name="msapplication-TileColor" content="#f97316" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="JJ Enterprises" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="application-name" content="JJ Enterprises" />
-
-        {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-        {/* DNS Prefetch for performance */}
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-
         {/* Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
@@ -154,24 +161,26 @@ export default function RootLayout({
         <ErrorBoundary>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
             <AuthProvider>
-              <div className="min-h-screen flex flex-col">
-                <Navigation />
-                <main className="flex-1" id="main-content">
-                  {children}
-                </main>
-                <Footer />
-              </div>
-              <Toaster
-                position="top-right"
-                toastOptions={{
-                  duration: 4000,
-                  style: {
-                    background: "white",
-                    border: "1px solid #e5e7eb",
-                    color: "#374151",
-                  },
-                }}
-              />
+              <CurrencyProvider>
+                <div className="min-h-screen flex flex-col">
+                  <Navigation />
+                  <main className="flex-1" id="main-content">
+                    {children}
+                  </main>
+                  <Footer />
+                </div>
+                <Toaster
+                  position="top-right"
+                  toastOptions={{
+                    duration: 4000,
+                    style: {
+                      background: "white",
+                      border: "1px solid #e5e7eb",
+                      color: "#374151",
+                    },
+                  }}
+                />
+              </CurrencyProvider>
             </AuthProvider>
           </ThemeProvider>
         </ErrorBoundary>

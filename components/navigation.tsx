@@ -47,6 +47,7 @@ import {
   X,
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { CurrencySelector } from "@/components/currency-selector"
 
 const productComponents: {
   title: string
@@ -55,48 +56,48 @@ const productComponents: {
   icon: React.ElementType
   badge?: string
 }[] = [
-  {
-    title: "Corrugated Shipping Boxes",
-    href: "/products/corrugated",
-    description: "Durable corrugated boxes for shipping, storage, and e-commerce.",
-    icon: Truck,
-    badge: "Popular",
-  },
-  {
-    title: "Luxury Rigid Gift Boxes",
-    href: "/products/luxury-rigid",
-    description: "Premium, sturdy boxes for a high-end unboxing experience.",
-    icon: Sparkles,
-    badge: "Popular",
-  },
-  {
-    title: "Pharmaceutical Cartons",
-    href: "/products/pharma",
-    description: "FDA compliant and secure packaging for medical products.",
-    icon: ShieldCheck,
-    badge: "Certified",
-  },
-  {
-    title: "Food-Grade Boxes",
-    href: "/products/food-packaging",
-    description: "Safe packaging for direct food contact and beverages.",
-    icon: Utensils,
-    badge: "Food Safe",
-  },
-  {
-    title: "Folding Paper Cartons",
-    href: "/products/folding-cartons",
-    description: "Customizable and lightweight cartons for retail products.",
-    icon: PackageSearch,
-  },
-  {
-    title: "E-commerce Mailers",
-    href: "/products/ecommerce-packaging",
-    description: "Optimized mailers and boxes for direct-to-consumer shipping.",
-    icon: ShoppingBag,
-    badge: "Popular",
-  },
-]
+    {
+      title: "Corrugated Shipping Boxes",
+      href: "/products/corrugated",
+      description: "Durable corrugated boxes for shipping, storage, and e-commerce.",
+      icon: Truck,
+      badge: "Popular",
+    },
+    {
+      title: "Luxury Rigid Gift Boxes",
+      href: "/products/luxury-rigid",
+      description: "Premium, sturdy boxes for a high-end unboxing experience.",
+      icon: Sparkles,
+      badge: "Popular",
+    },
+    {
+      title: "Pharmaceutical Cartons",
+      href: "/products/pharma",
+      description: "FDA compliant and secure packaging for medical products.",
+      icon: ShieldCheck,
+      badge: "Certified",
+    },
+    {
+      title: "Food-Grade Boxes",
+      href: "/products/food-packaging",
+      description: "Safe packaging for direct food contact and beverages.",
+      icon: Utensils,
+      badge: "Food Safe",
+    },
+    {
+      title: "Folding Paper Cartons",
+      href: "/products/folding-cartons",
+      description: "Customizable and lightweight cartons for retail products.",
+      icon: PackageSearch,
+    },
+    {
+      title: "E-commerce Mailers",
+      href: "/products/ecommerce-packaging",
+      description: "Optimized mailers and boxes for direct-to-consumer shipping.",
+      icon: ShoppingBag,
+      badge: "Popular",
+    },
+  ]
 
 const industrySolutions: {
   title: string
@@ -105,47 +106,47 @@ const industrySolutions: {
   icon: React.ElementType
   clients?: string
 }[] = [
-  {
-    title: "Pharmaceutical & Healthcare",
-    href: "/industry/pharmaceutical",
-    description: "Compliant packaging with security features, tamper-evidence, and tracking.",
-    icon: FlaskConical,
-    clients: "50+ Pharma Clients",
-  },
-  {
-    title: "Food & Beverage",
-    href: "/industry/food-beverage",
-    description: "Safe, fresh, and appealing packaging solutions for consumables.",
-    icon: Utensils,
-    clients: "200+ Food Brands",
-  },
-  {
-    title: "Cosmetics & Personal Care",
-    href: "/industry/cosmetics",
-    description: "Elegant and protective packaging for beauty and skincare products.",
-    icon: Palette,
-    clients: "100+ Beauty Brands",
-  },
-  {
-    title: "E-commerce & Retail",
-    href: "/industry/ecommerce",
-    description: "Efficient, brandable, and durable shipping solutions for online businesses.",
-    icon: ShoppingBag,
-    clients: "300+ Online Stores",
-  },
-  {
-    title: "Electronics & Technology",
-    href: "/industry/electronics",
-    description: "Protective, anti-static packaging for sensitive electronic components.",
-    icon: Cpu,
-  },
-  {
-    title: "Automotive & Industrial",
-    href: "/industry/automotive",
-    description: "Heavy-duty packaging for parts, components, and industrial goods.",
-    icon: Car,
-  },
-]
+    {
+      title: "Pharmaceutical & Healthcare",
+      href: "/industry/pharmaceutical",
+      description: "Compliant packaging with security features, tamper-evidence, and tracking.",
+      icon: FlaskConical,
+      clients: "50+ Pharma Clients",
+    },
+    {
+      title: "Food & Beverage",
+      href: "/industry/food-beverage",
+      description: "Safe, fresh, and appealing packaging solutions for consumables.",
+      icon: Utensils,
+      clients: "200+ Food Brands",
+    },
+    {
+      title: "Cosmetics & Personal Care",
+      href: "/industry/cosmetics",
+      description: "Elegant and protective packaging for beauty and skincare products.",
+      icon: Palette,
+      clients: "100+ Beauty Brands",
+    },
+    {
+      title: "E-commerce & Retail",
+      href: "/industry/ecommerce",
+      description: "Efficient, brandable, and durable shipping solutions for online businesses.",
+      icon: ShoppingBag,
+      clients: "300+ Online Stores",
+    },
+    {
+      title: "Electronics & Technology",
+      href: "/industry/electronics",
+      description: "Protective, anti-static packaging for sensitive electronic components.",
+      icon: Cpu,
+    },
+    {
+      title: "Automotive & Industrial",
+      href: "/industry/automotive",
+      description: "Heavy-duty packaging for parts, components, and industrial goods.",
+      icon: Car,
+    },
+  ]
 
 const servicesLinks: {
   title: string
@@ -154,47 +155,47 @@ const servicesLinks: {
   icon: React.ElementType
   duration?: string
 }[] = [
-  {
-    title: "Custom Design & Prototyping",
-    href: "/services/design",
-    description: "Collaborate with our designers to create perfect packaging from concept to reality.",
-    icon: Paintbrush,
-    duration: "3-5 Days",
-  },
-  {
-    title: "Bulk & Contract Manufacturing",
-    href: "/services/bulk-orders",
-    description: "Reliable, high-volume production with consistent quality for large-scale needs.",
-    icon: Building,
-    duration: "7-14 Days",
-  },
-  {
-    title: "Quality & Compliance Testing",
-    href: "/services/testing",
-    description: "Rigorous testing services to ensure your packaging meets all industry standards.",
-    icon: TestTube,
-    duration: "24-48 Hours",
-  },
-  {
-    title: "Sustainable Sourcing",
-    href: "/services/sustainability",
-    description: "Choose from our range of eco-friendly materials and sustainable practices.",
-    icon: Leaf,
-    duration: "Ongoing",
-  },
-  {
-    title: "Packaging Consultation",
-    href: "/services/consultation",
-    description: "Leverage our expertise to optimize your packaging strategy and reduce costs.",
-    icon: MessageCircle,
-  },
-  {
-    title: "3D Packaging Configurator",
-    href: "/configurator",
-    description: "Visualize and customize your packaging in real-time with our interactive 3D tool.",
-    icon: CuboidIcon,
-  },
-]
+    {
+      title: "Custom Design & Prototyping",
+      href: "/services/design",
+      description: "Collaborate with our designers to create perfect packaging from concept to reality.",
+      icon: Paintbrush,
+      duration: "3-5 Days",
+    },
+    {
+      title: "Bulk & Contract Manufacturing",
+      href: "/services/bulk-orders",
+      description: "Reliable, high-volume production with consistent quality for large-scale needs.",
+      icon: Building,
+      duration: "7-14 Days",
+    },
+    {
+      title: "Quality & Compliance Testing",
+      href: "/services/testing",
+      description: "Rigorous testing services to ensure your packaging meets all industry standards.",
+      icon: TestTube,
+      duration: "24-48 Hours",
+    },
+    {
+      title: "Sustainable Sourcing",
+      href: "/services/sustainability",
+      description: "Choose from our range of eco-friendly materials and sustainable practices.",
+      icon: Leaf,
+      duration: "Ongoing",
+    },
+    {
+      title: "Packaging Consultation",
+      href: "/services/consultation",
+      description: "Leverage our expertise to optimize your packaging strategy and reduce costs.",
+      icon: MessageCircle,
+    },
+    {
+      title: "3D Packaging Configurator",
+      href: "/configurator",
+      description: "Visualize and customize your packaging in real-time with our interactive 3D tool.",
+      icon: CuboidIcon,
+    },
+  ]
 
 const resourcesLinks: { title: string; href: string; description: string; icon: React.ElementType; type?: string }[] = [
   {
@@ -424,6 +425,11 @@ export function Navigation() {
             </div>
           </div>
 
+          {/* Currency Selector */}
+          <div className="hidden sm:block mr-2">
+            <CurrencySelector />
+          </div>
+
           {/* 3D Configurator Button */}
           <Link href="/configurator" aria-label="Try 3D packaging configurator">
             <Button className="hidden sm:inline-flex bg-orange-500 hover:bg-orange-600 hover:scale-105 transition-all duration-300 shadow-lg">
@@ -624,13 +630,15 @@ const ListItem = React.forwardRef<
     icon: React.ElementType
     badge?: string
     subtitle?: string
+    href: string
   }
->(({ className, title, children, icon: Icon, badge, subtitle, ...props }, ref) => {
+>(({ className, title, children, icon: Icon, badge, subtitle, href, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
         <Link
           ref={ref}
+          href={href}
           className={cn(
             "block select-none space-y-1 rounded-md p-4 leading-none no-underline outline-none transition-all hover:bg-gray-50 hover:shadow-md focus:bg-gray-50 focus:shadow-md border border-transparent hover:border-gray-200",
             className,
