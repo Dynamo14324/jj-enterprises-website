@@ -1,7 +1,7 @@
 import { PageLayout } from "@/components/page-layout"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Leaf, Recycle, Globe, CheckSquare, Handshake, Search } from "lucide-react"
+import { Leaf, Recycle, Globe, CheckSquare, HelpingHand, Search } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { services } from "@/data/mock-data"
